@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_10_27_110610) do
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "element_id"
+    t.string "name"
+    t.string "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "elements", force: :cascade do |t|
     t.string "name"
     t.string "appearance"
@@ -24,22 +32,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_110610) do
     t.string "source"
     t.integer "xpos"
     t.integer "ypos"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "example_elems", force: :cascade do |t|
-    t.integer "element_id"
-    t.integer "user_id"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "username"
-    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

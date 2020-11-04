@@ -1,3 +1,3 @@
 class Element < ApplicationRecord
-    has_many :example_elems
+    has_many :comments
 end
